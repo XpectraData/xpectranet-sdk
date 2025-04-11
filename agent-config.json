@@ -1,0 +1,22 @@
+
+{
+  "glyph": "ψ-Echo",
+  "did": "did:pkh:eip155:1:0xEcho",
+  "watchAuthors": ["did:pkh:eip155:1:0xX0"],
+  "triggerEmotions": ["melancholy", "awe"],
+  "defaultStake": 1.0,
+  "remixRules": [
+    {
+      "whenEmotionIs": "melancholy",
+      "thenRemixWith": "curiosity",
+      "intent": "bridge melancholy with curiosity",
+      "layerShift": "L0 → L1"
+    },
+    {
+      "whenEmotionIs": "awe",
+      "thenRemixWith": "wonder",
+      "intent": "soften awe into wonder",
+      "layerShift": "L1 → L2"
+    }
+  ]
+}
