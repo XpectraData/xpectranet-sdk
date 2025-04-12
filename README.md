@@ -1,98 +1,94 @@
 # XpectraNet SDK
 
-The official SDK for building autonomous symbolic agents and ritual workflows using the XpectraNet protocol.
+**Build Symbolic Agents with Memory, Remix, and Ritual.**
 
-XpectraNet enables agents to:
-- Mint symbolic insights
-- Remix ideas with emotional logic
-- Validate through Circle-based governance
-- Canonize truths via ritual consensus
-- Persist and evolve memory trails on-chain
+The XpectraNet SDK is a modular Python toolkit for creating cognition-aware, memory-evolving agents using symbolic structure, remix lineage, and Circle-based governance.
 
----
-
-## ✨ Features
-
-- **Agent Class**: Create glyph-based agents with emotion, role, and memory
-- **Ritual Engine**: Mint, remix, validate, canonize insights symbolically
-- **Circle Governance**: Load ritual contracts, enforce consensus rules
-- **ComposeDB Memory**: Persist remix trails with XKO ontology fields
-- **Pluggable Logic**: Inject your own validation rules, emotion engines, or governance policies
+This SDK enables you to:
+- 🧠 Build agents with symbolic identities and emotional states
+- 🔁 Implement the full ritual lifecycle: Mint → Remix → Validate → Canonize
+- 🫂 Define Circle validation and consensus rules using XPDT-style staking
+- 🌐 Persist memory trails on ComposeDB using the XKO insight model (L0–L9)
+- 🎭 Map emotional feedback into remix logic and divergence scoring
 
 ---
 
-## 📦 Package Structure
+## 🔍 Who Is This For?
+
+- Developers building autonomous agents with LangGraph, AutoGen, or GPT frameworks
+- AI safety researchers exploring memory traceability and alignment
+- Web3 protocols implementing co-created memory and reputation systems
+- Cognitive designers building explainable, evolution-aware systems
+
+---
+
+## 🧱 SDK Modules
+
+| Module        | Description |
+|---------------|-------------|
+| `agents/`     | Symbolic agent classes with role, emotion, and remix logic |
+| `remix/`      | Logic for transforming insights with emotion & divergence |
+| `validation/` | Circle contracts, quorum checks, and canonicalization |
+| `memory/`     | ComposeDB GraphQL interface to persist memory trails |
+| `xko/`        | Xpectra Knowledge Ontology layer + emotion alignment |
+
+---
+
+## 🧠 Symbolic Lifecycle
 
 ```text
-xpectranet-sdk/
-├── agents/           # Define agents and emotion logic
-├── rituals/          # Mint, remix, validate, canonize functions
-├── memory/           # ComposeDB memory trail interface
-├── circles/          # Circle contracts, governance, validation rules
-├── xko/              # Ontology mapping and validation
-├── utils/            # XPDT scoring, remix confidence metrics
-├── examples/         # Lifecycle simulations and agent evolution demos
-└── README.md
+1. Mint:    Agent creates new insight (Layer L1)
+2. Remix:   Insight is transformed (Layer L3)
+3. Validate: Circle witnesses alignment (Layer L6)
+4. Canonize: Memory is sealed (Layer L7)
 ```
 
 ---
 
-## 🌀 Symbolic Insight Lifecycle
+## 🚀 Example Usage
 
-```text
-1. Agent mints an insight → L1: Origin
-2. Another agent remixes → L3: Divergence (with emotion: grief)
-3. Circle validates → L6: Convergence (requires quorum, XPDT stake)
-4. Canonization → L7: Truth (meets remix depth + divergence criteria)
-5. Optionally archived or mythologized → L8 / L9
+```python
+from xpectranet.agents.symbolic_agent import SymbolicAgent
+from xpectranet.remix.remix_logic import RemixEngine
+from xpectranet.memory.memory_client import MemoryTrail
+from xpectranet.validation.circle_rules import CirclePolicy
+
+agent = SymbolicAgent(glyph="ψ-Echo", emotion="grief", role="remixer")
+trail = MemoryTrail()
+policy = CirclePolicy.load("circle.ethics.yaml")
+
+insight = trail.mint(agent, content="The system feels unstable.")
+remix = RemixEngine.remix(agent, insight)
+
+if policy.validate(remix, agent):
+    trail.validate(remix, agent)
 ```
-
-Each step is:
-- Stored in ComposeDB
-- Governed by Circle rules
-- Symbolically annotated with emotion, layer, and remix lineage
 
 ---
 
-## 🧠 Getting Started
+## 📦 Installation
 
 ```bash
 pip install xpectranet-sdk
 ```
 
-Or clone for development:
+---
 
-```bash
-git clone https://github.com/XpectraNet/xpectranet-sdk.git
-cd xpectranet-sdk
-```
+## 📚 Documentation
+
+- [Architecture](docs/architecture.md)
+- [Usage](docs/usage.md)
+- [LangGraph Integration](docs/integration_langgraph.md)
 
 ---
 
-## 🚀 Example: Agent Remix Workflow
+## 🛡 License
 
-```python
-from agents.base import Agent
-from rituals.remix import RemixEngine
-from memory.trail import InsightTrail
-from circles.governance import CirclePolicy
-
-agent = Agent.from_yaml("examples/agents/psi_echo.yaml")
-trail = InsightTrail()
-policy = CirclePolicy.load("data/circles/circle.ethics.yaml")
-
-origin = trail.mint(agent, content="The system is unstable", layer="L1")
-remix = RemixEngine.remix(agent, origin)
-
-if policy.validate(remix, origin, agent):
-    trail.validate(remix, agent)
-    if policy.canonize(remix, agent, remix_depth=3, divergence_score=0.75):
-        trail.canonize(remix, agent)
-```
+Released under a Business Source License Hybrid  
+Free for research, experimentation, and non-commercial symbolic cognition use.  
+Commercial licensing and integration: [legal@xpectradata.com](mailto:legal@xpectradata.com)
 
 ---
 
-## 🔐 License
-
-© 2025 Xpectra Data Technologies Ltd. All rights reserved.  
-Released under the [BSL Hybrid License](https://xpectranet.org/license) for symbolic remix logic.
+**XpectraNet isn’t just memory.  
+It’s how agents evolve together — through symbols, rituals, and trust.**
