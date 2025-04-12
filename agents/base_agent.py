@@ -1,1 +1,0 @@
-# Base symbolic agent class
