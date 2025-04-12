@@ -1,8 +1,8 @@
 from typing import Dict, Optional
 import uuid
-from datetime import datetime
+from .base_agent import BaseAgent  # Import the abstract base class
 
-class SymbolicAgent:
+class SymbolicAgent(BaseAgent):
     """
     A symbolic cognition agent designed for LangGraph-style workflows.
 
