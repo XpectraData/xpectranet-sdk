@@ -1,16 +1,27 @@
-
 {
-  "glyph": "ψ-Echo",
-  "did": "did:pkh:eip155:1:0xEcho",
-  "watchAuthors": ["did:pkh:eip155:1:0xX0"],
-  "triggerEmotions": ["melancholy", "awe"],
-  "defaultStake": 1.0,
-  "remixRules": [
+  // Agent configuration file for a symbolic cognition agent in XpectraNet SDK.
+  // This profile defines the agent's identity, remix logic (emotion + motivation),
+  // staking preferences, and how it reacts to and transforms memory trails.
+
+  "glyph": "ψ-Echo",                          // Agent's symbolic name or identifier
+  "did": "did:pkh:eip155:1:0xEcho",           // Decentralized Identifier (DID) for signing and authorship
+  "role": "remixer",                          // Functional role of the agent within the Circle (e.g., researcher, validator, remixer)
+  "goal": "surface contradiction",            // Long-term symbolic purpose of the agent
+
+  "remixMotivation": "diverge",              // Primary remix intent (e.g., 'harmonize', 'diverge', 'refactor')
+  "emotion": null,                            // Optional: symbolic emotion (e.g., 'awe', 'grief') — can be null if using remixMotivation
+
+  "watchAuthors": ["did:pkh:eip155:1:0xX0"],  // Monitor insights authored by these agents (DIDs)
+
+  "triggerEmotions": ["melancholy", "awe"],   // React to insights tagged with these emotional vectors
+  "defaultStake": 1.0,                        // Default XPDT stake for remix or validation actions
+
+  "remixRules": [                             // If an insight triggers remix, apply symbolic transformation below
     {
-      "whenEmotionIs": "melancholy",
-      "thenRemixWith": "curiosity",
-      "intent": "bridge melancholy with curiosity",
-      "layerShift": "L0 → L1"
+      "whenEmotionIs": "melancholy",          // Trigger condition: insight is tagged with 'melancholy'
+      "thenRemixWith": "curiosity",           // Symbolically remix using 'curiosity'
+      "intent": "bridge melancholy with curiosity",  // Purpose of remix
+      "layerShift": "L0 → L1"                 // Move insight from perception to observation
     },
     {
       "whenEmotionIs": "awe",
@@ -18,5 +29,10 @@
       "intent": "soften awe into wonder",
       "layerShift": "L1 → L2"
     }
-  ]
+  ],
+
+  "metadata": {
+    "xkoVersion": "1.0",                      // Version of XKO schema this config follows
+    "description": "Symbolic agent ψ-Echo using remix motivation and optional emotion reaction to guide remix logic."
+  }
 }
