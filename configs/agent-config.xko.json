@@ -1,0 +1,34 @@
+{
+    "glyph": "\u03c8-Echo",
+    "did": "did:pkh:eip155:1:0xEcho",
+    "role": "remixer",
+    "goal": "surface contradiction",
+    "remixMotivation": "diverge",
+    "emotion": null,
+    "watchAuthors": [
+        "did:pkh:eip155:1:0xX0"
+    ],
+    "triggerEmotions": [
+        "melancholy",
+        "awe"
+    ],
+    "defaultStake": 1.0,
+    "remixRules": [
+        {
+            "whenEmotionIs": "melancholy",
+            "thenRemixWith": "curiosity",
+            "intent": "bridge melancholy with curiosity",
+            "layerShift": "L0 \u2192 L1"
+        },
+        {
+            "whenEmotionIs": "awe",
+            "thenRemixWith": "wonder",
+            "intent": "soften awe into wonder",
+            "layerShift": "L1 \u2192 L2"
+        }
+    ],
+    "metadata": {
+        "xkoVersion": "1.0",
+        "description": "Symbolic agent \u03c8-Echo using remix motivation and optional emotion reaction to guide remix logic."
+    }
+}

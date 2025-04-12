@@ -1,0 +1,31 @@
+{
+    "circleName": "Canonical Insight Council",
+    "layer": "L6",
+    "quorum": {
+        "requiredValidators": 3,
+        "minXPDTStake": 1.0
+    },
+    "roles": [
+        "researcher",
+        "remixer",
+        "validator"
+    ],
+    "rules": {
+        "validationWindow": "48h",
+        "disputeWindow": "24h",
+        "voteMethod": "stake-weighted",
+        "requiredAffirmVotes": 2
+    },
+    "rewardDistribution": {
+        "canonizationReward": 10.0,
+        "validatorSplit": [
+            0.4,
+            0.4,
+            0.2
+        ]
+    },
+    "metadata": {
+        "xkoVersion": "1.0",
+        "description": "Circle consensus policy for validating and canonizing symbolic insights at Layer L6."
+    }
+}
