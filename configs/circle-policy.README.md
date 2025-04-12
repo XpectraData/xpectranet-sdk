@@ -61,4 +61,3 @@ This file is loaded by XpectraNet validators, remixers, or governance agents to:
 - Track dispute periods
 - Distribute rewards
 - Canonize memory into L7
-

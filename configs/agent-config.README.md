@@ -44,4 +44,3 @@ Load this config in your agent loop or LangGraph state to guide:
 - Emotion-reactive remix
 - Remix lineage logic
 - Agent identity and Circle behavior
-
