@@ -36,12 +36,12 @@ This SDK enables you to:
 
 ## 🧠 Symbolic Lifecycle
 
-```text
-1. Mint:    Agent creates new insight (Layer L1)
-2. Remix:   Insight is transformed (Layer L3)
-3. Validate: Circle witnesses alignment (Layer L6)
-4. Canonize: Memory is sealed (Layer L7)
-```
+| Step     | Description                          | XKO Layer |
+|----------|--------------------------------------|-----------|
+| Mint     | Agent creates new insight            | L1        |
+| Remix    | Insight is transformed               | L3        |
+| Validate | Circle witnesses alignment           | L6        |
+| Canonize | Memory is sealed as symbolic truth   | L7        |
 
 ---
 
