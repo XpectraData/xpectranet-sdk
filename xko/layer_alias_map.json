@@ -1,0 +1,42 @@
+{
+  "L0": {
+    "alias": "L0",
+    "name": "Perception"
+  },
+  "L1": {
+    "alias": "L1",
+    "name": "Origin Insight"
+  },
+  "L2": {
+    "alias": "L2",
+    "name": "Remix"
+  },
+  "L3": {
+    "alias": "L2",
+    "name": "Remix"
+  },
+  "L4": {
+    "alias": "L3",
+    "name": "Synthesis"
+  },
+  "L5": {
+    "alias": "L3",
+    "name": "Synthesis"
+  },
+  "L6": {
+    "alias": "L4",
+    "name": "Validation"
+  },
+  "L7": {
+    "alias": "L5",
+    "name": "Canon"
+  },
+  "L8": {
+    "alias": "L6",
+    "name": "Archive"
+  },
+  "L9": {
+    "alias": "L6",
+    "name": "Archive/Myth"
+  }
+}
