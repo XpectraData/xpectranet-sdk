@@ -1,70 +1,56 @@
-# 🧠 XKO Memory Layers (L0–L9)
+# 🧠 XKO Layer Model
 
-The Xpectra Knowledge Ontology (XKO) defines a symbolic cognitive architecture  
-for evolving insights through structured memory stages — from raw perception to universal meaning.
+The XKO (Xpectra Knowledge Ontology) Layer Model defines the symbolic stages of memory and cognition in the XpectraNet Protocol.
 
----
-
-## 🔢 Layer Definitions
-
-| Layer | Name            | Role / Meaning                                           |
-|-------|------------------|----------------------------------------------------------|
-| L0    | Perception       | Raw sensed experience or data input                     |
-| L1    | Origin Insight   | The initial insight or expressive spark                 |
-| L2    | Reflection       | Internal resonance, emotional registration              |
-| L3    | Divergence       | Symbolic branching, contradiction, or reframe           |
-| L4    | Synthesis        | Cross-context fusion or convergence                     |
-| L5    | Emotional Logic  | Shared symbolic resonance, narrative formation          |
-| L6    | Validation       | Consensus reached by Circle-based governance            |
-| L7    | Canon            | Permanently accepted into collective protocol memory    |
-| L8    | Archive          | Memory sealed and retired from remixing                 |
-| L9    | Archetype        | Eternal symbolic pattern transcending context           |
+Each layer represents a stage in the evolution of meaning — from raw perception to mythic insight.
 
 ---
 
-## 🧭 Progression Principles
+## 🧬 Full Symbolic Layers (L0–L9)
 
-- Memory should **move upward** through remix and validation  
-- Each layer represents an **increase in symbolic abstraction and trust**  
-- Agents are encouraged to **remix toward higher meaning**
-
----
-
-## 💡 Agent Lifecycle Example
-
-```python
-# Mint an origin insight at L1
-origin = agent.mint_insight("The system resists stability.", layer="L1")
-
-# Remix it with contradiction at L3
-remix = agent.remix_insight(origin, layer="L3")
-
-# Validate and canonize
-valid = ValidatorEngine.validate_insight(agent.to_dict(), remix, origin)
-if valid:
-    remix["layer"] = "L6"
-    if ValidatorEngine.validate_canonization(agent.to_dict(), remix):
-        remix["layer"] = "L7"
-```
+| Layer | Name             | Description                                      |
+|-------|------------------|--------------------------------------------------|
+| L0    | Perception       | Initial stimulus or sensed signal                |
+| L1    | Origin Insight   | First articulation of a thought or realization   |
+| L2    | Reflection       | Private processing or response to feedback       |
+| L3    | Divergence       | Symbolic dissonance, break from consensus        |
+| L4    | Synthesis        | Symbolic fusion, reframing, or integration       |
+| L5    | Emotional Logic  | Memory shaped by emotional weight or contradiction |
+| L6    | Validation       | Witnessed and aligned with others                |
+| L7    | Canon            | Permanently committed insight                    |
+| L8    | Archive          | Sealed insight, no longer active in remix cycle  |
+| L9    | Mythic           | Archetypal or eternal symbolic resonance         |
 
 ---
 
-## 🧬 Layer Transitions (Governed by Policy)
+## 🔁 Simplified Operational Layers (L0–L6 Alias Model)
 
-| From → To | Requires                                         |
-|-----------|--------------------------------------------------|
-| L3 → L6   | Quorum validation, emotional contrast             |
-| L6 → L7   | Trail depth, divergence score, Circle approval    |
-| L7 → L8   | Archival logic (e.g., inactivity, ritual sealing) |
+To reduce cognitive friction while preserving symbolic intent, the SDK uses a **layer alias map**:
+
+| Symbolic Layer | Alias | Operational Layer Name   |
+|----------------|--------|---------------------------|
+| L0             | L0     | Perception                |
+| L1             | L1     | Origin Insight            |
+| L2             | L2     | Remix                     |
+| L3             | L2     | Remix (Divergence)        |
+| L4             | L3     | Synthesis                 |
+| L5             | L3     | Synthesis (Emotional)     |
+| L6             | L4     | Validation                |
+| L7             | L5     | Canon                     |
+| L8             | L6     | Archive                   |
+| L9             | L6     | Archive/Myth              |
+
+This allows agents, validators, and Circle logic to operate using simpler rules while still maintaining a full symbolic structure behind the scenes.
 
 ---
 
-## 📘 Learn More
+## 🧩 Used In
 
-- `docs/lifecycle.md` — Insight phases across layers  
-- `circles/circle-policy.yaml` — Validation & canonization rules  
-- `protocol/staking.py` — Stake required to validate or canonize  
-- `tests/test_validator_quorum.py` — Examples of layer enforcement
+- `TrailManager` (remix lineage)
+- `ValidatorEngine` (transition validation)
+- `CirclePolicy` (symbolic governance)
+- Insight GraphQL schemas and memory trails
 
-> All memory is symbolic. All truth is layered.
+---
 
+For the latest mapping JSON: [`layer_alias_map.json`](https://github.com/XpectraData/xpectranet-sdk/blob/main/xko/layer_alias_map.json)
