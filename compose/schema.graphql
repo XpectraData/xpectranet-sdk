@@ -1,0 +1,14 @@
+# schema.graphql — ComposeDB Insight Model for XpectraNet SDK
+
+type Insight @createModel(accountRelation: LIST, description: "XKO symbolic insight") {
+  content: String!
+  layer: String!             # L0 to L9
+  remixOf: DID               # Parent insight reference
+  remixMotivation: String    # Symbolic remix intent (e.g., diverge, harmonize)
+  validatedBy: [DID]         # DIDs of validators
+  canonized: Boolean         # True if canonized to Layer 7
+  trail: [String]            # IDs representing remix lineage
+  divergenceScore: Float     # How different from parent
+  tags: [String]             # Optional: for symbolic classification
+  createdAt: DateTime!
+}
