@@ -85,7 +85,7 @@ This SDK is in early release. Contributions, extensions, and feedback are welcom
 
 ## 📜 License & Intellectual Property
 
-This SDK is released under the [XPECTRANET™ Protocol License](./LICENSE.md).  
+This SDK is released under the [XPECTRANET® Protocol License](./LICENSE.md).  
 
 - **XPECTRANET®** is a registered trademark of **Xpectra Data Technologies Ltd.**  
 - XPDT, XKO, and symbolic logic (e.g. remix trails, insight scoring, Circle voting) are protected intellectual property.  
