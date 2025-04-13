@@ -1,1 +1,0 @@
-# Circle contract and validation logic
