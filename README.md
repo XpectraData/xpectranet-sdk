@@ -17,8 +17,8 @@ Supports remixable insights, trust-based validation, and protocol-aligned govern
 
 ## 📦 Modules
 
-| Layer             | Folder            | Purpose                                  |
-|-------------------|-------------------|------------------------------------------|
+| Layer            | Folder          | Purpose                                  |
+|------------------|------------------|------------------------------------------|
 | Agents            | `agents/`         | Mint, remix, and model symbolic cognition |
 | Remix Engine      | `remix/`          | Apply motivation and remix rules         |
 | Symbolic Memory   | `memory/`         | Store insights, build trails, persist to Ceramic |
@@ -59,14 +59,24 @@ ValidatorEngine.validate_insight(agent.to_dict(), remix, origin)
 
 ## 📚 Documentation
 
-See the organized [documentation index](docs/README.md) for:
+XpectraNet SDK includes protocol specifications, integration guides, and system architecture.
 
-- ✅ [Formal specs](docs/specs/spec-xko-layers.md) on symbolic layers, governance, and memory
-- 🔄 [Usage guides](docs/guides/usage.md) for LangGraph integration and agent lifecycle
-- 🧱 [Architecture overview](docs/architecture.md)
+### 🔖 Specifications (`/docs/specs/`)
+- [`spec-xko-layers.md`](docs/specs/spec-xko-layers.md): Full + alias layer model (L0–L9 → L0–L6)
+- [`spec-circle-governance.md`](docs/specs/spec-circle-governance.md): Symbolic validation, Canon rules
+- [`spec-temporal-autonomy.md`](docs/specs/spec-temporal-autonomy.md): Scheduled cognition and ritual recall
+
+### 🛠 Developer Guides (`/docs/guides/`)
+- [`usage.md`](docs/guides/usage.md): Quick-start: mint, remix, validate
+- [`lifecycle.md`](docs/guides/lifecycle.md): Agent loop walkthrough (L1 → L6)
+- [`integration_langgraph.md`](docs/guides/integration_langgraph.md): Run agent pipelines using LangGraph
+
+### 🧱 Architecture
+- [`architecture.md`](docs/architecture.md): High-level module map, dependencies, and symbolic flow
 
 ---
 
+For full index: [`docs/README.md`](docs/README.md)
 ## 🧪 Run Tests
 
 ```bash
