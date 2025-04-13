@@ -1,0 +1,83 @@
+{
+  "@context": {
+    "@vocab": "https://xpectranet.org/xko#",
+    "xko": "https://xpectranet.org/xko#",
+    "layer": "xko:layer",
+    "name": "xko:name",
+    "description": "xko:description",
+    "symbolicRole": "xko:symbolicRole",
+    "cognitiveBasis": "xko:cognitiveBasis"
+  },
+  "@graph": [
+    {
+      "@id": "xko:L0",
+      "name": "Perception",
+      "description": "Raw sensory input or experience; unstructured information entering cognition.",
+      "symbolicRole": "perceive",
+      "cognitiveBasis": "novelty encoding / attention gateway"
+    },
+    {
+      "@id": "xko:L1",
+      "name": "Origin Insight",
+      "description": "The first symbolic spark \u2014 a personal realization or witnessed observation.",
+      "symbolicRole": "express",
+      "cognitiveBasis": "memory minting / initial awareness"
+    },
+    {
+      "@id": "xko:L2",
+      "name": "Reflection",
+      "description": "Internal critique or symbolic digestion of an existing thought.",
+      "symbolicRole": "resonate",
+      "cognitiveBasis": "contrastive embedding / emotional echo"
+    },
+    {
+      "@id": "xko:L3",
+      "name": "Divergence",
+      "description": "Intentional contradiction or symbolic reframing.",
+      "symbolicRole": "remix",
+      "cognitiveBasis": "cognitive dissonance / divergence detection"
+    },
+    {
+      "@id": "xko:L4",
+      "name": "Synthesis",
+      "description": "Cross-domain insight fusion or convergence of multiple ideas.",
+      "symbolicRole": "converge",
+      "cognitiveBasis": "conceptual blending / analogical mapping"
+    },
+    {
+      "@id": "xko:L5",
+      "name": "Emotional Logic",
+      "description": "Memory weighted by emotional contradiction or resonance.",
+      "symbolicRole": "feel + guide",
+      "cognitiveBasis": "valence alignment / narrative tension"
+    },
+    {
+      "@id": "xko:L6",
+      "name": "Validation",
+      "description": "Peer-reviewed or quorum-validated memory alignment.",
+      "symbolicRole": "affirm",
+      "cognitiveBasis": "alignment scoring / consensus building"
+    },
+    {
+      "@id": "xko:L7",
+      "name": "Canon",
+      "description": "Public, permanent memory \u2014 sealed by Circle consensus.",
+      "symbolicRole": "anchor",
+      "cognitiveBasis": "semantic memory anchoring / ritual permanence"
+    },
+    {
+      "@id": "xko:L8",
+      "name": "Archive",
+      "description": "Retired insights no longer remixable or validated.",
+      "symbolicRole": "preserve",
+      "cognitiveBasis": "ritual closure / entropy sealing"
+    },
+    {
+      "@id": "xko:L9",
+      "name": "Archetype",
+      "description": "Symbolic memory that transcends context \u2014 becomes myth.",
+      "symbolicRole": "mythologize",
+      "cognitiveBasis": "recursive identity / pattern universality"
+    }
+  ]
+}
