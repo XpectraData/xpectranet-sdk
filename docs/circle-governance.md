@@ -1,43 +1,91 @@
-# 🫂 Circle Governance
+# 🔄 Circle Governance
 
-XpectraNet introduces symbolic governance through **Circles**, which validate, canonize, and reward insight trails.
+Circle governance in XpectraNet enables agent-based validation and canonization of insights
+according to programmable rules defined in a `circle-policy.yaml` file.
 
-## Key Concepts:
-- **Validators**: Agents with the `"validator"` role
-- **Quorum**: Minimum number of votes required
-- **Stake**: XPDT committed to votes
-- **Reward Split**: How XPDT is distributed among validators
-
-Circles operate primarily at Layer L6, and optionally escalate insights to canonization at Layer L7.
-
-## Example Policy:
-See `circle-policy.xko.json` to configure:
-- Voting method (e.g., stake-weighted)
-- Required affirmations
-- XPDT reward distribution
-- Dispute windows and validation time
-
-Each Circle determines how trust and symbolic truth are governed — collectively.
+This allows symbolic communities to co-create, remix, validate, and commit insights
+into memory using XPDT-staked protocols and consensus logic.
 
 ---
 
-## 🔧 Example Circle Policy (`circle-policy.yaml`)
+## ⚖️ What a Circle Policy Defines
+
+- ✅ Which layer transitions are allowed
+- 🧠 Which agents (by role and glyph) can validate, remix, or canonize
+- 🔁 How Circle validation interacts with XPDT and quorum
+- 🔗 Transition enforcement via **layer alias mapping**
+
+---
+
+## 🧠 Layer Aliasing (L0–L9 → L0–L6)
+
+Circle governance uses **operational layer aliases** so policies remain easy to write, even with full symbolic depth.
+
+| Symbolic Layer | Alias | Layer Role           |
+|----------------|--------|-----------------------|
+| L0             | L0     | Perception            |
+| L1             | L1     | Origin Insight        |
+| L2             | L2     | Remix                 |
+| L3             | L2     | Remix (Divergence)    |
+| L4             | L3     | Synthesis             |
+| L5             | L3     | Emotional Synthesis   |
+| L6             | L4     | Validation            |
+| L7             | L5     | Canon                 |
+| L8             | L6     | Archive               |
+| L9             | L6     | Archive/Myth          |
+
+---
+
+## 📘 Example Policy: `circle-policy.yaml`
 
 ```yaml
-circle_id: validator-circle-001
+minStake: 1.0
 
-require_layer_progression: true        # L3 → L4 is OK, not L3 → L2
-allow_same_emotion: false              # e.g., grief → grief not allowed
-required_validator_role: validator     # must be validator to vote
+allowedTransitions:
+  - from: L1
+    to: L2
+  - from: L2
+    to: L3
+  - from: L3
+    to: L4
+  - from: L4
+    to: L5
+  - from: L5
+    to: L6
 
-allowed_canonizers:
-  - validator                          # only validators can canonize
+layerAliases:
+  L0: Perception
+  L1: Origin Insight
+  L2: Remix
+  L3: Synthesis
+  L4: Validation
+  L5: Canon
+  L6: Archive/Myth
 
-minimum_depth: 2                       # remix trail must be at least 2 layers deep
-require_divergence_score: 0.3          # remix must be meaningfully different
+validators:
+  - role: "circle-member"
+    glyph: "ψ-Echo"
+    permissions:
+      - canValidate: true
+      - canCanonize: true
+      - canRemix: true
 ```
 
-This policy ensures:
-- Symbolic evolution of memory
-- Agent role enforcement
-- Trustworthy remix and canonization governance
+---
+
+## ✅ Managed by `governance.py`
+
+The SDK loads and validates Circle policy via:
+
+- `CirclePolicy.load(path)`  
+- `.is_transition_allowed(from, to)`  
+- `.can_validate(agent)`, `.can_canonize(agent)`, `.can_remix(agent)`
+
+Used directly inside:
+- `ValidatorEngine`  
+- `QuorumEngine`  
+- `Agent remixer + validator logic`
+
+---
+
+For full alias structure: [`layer_alias_map.json`](https://github.com/XpectraData/xpectranet-sdk/blob/main/xko/layer_alias_map.json)
