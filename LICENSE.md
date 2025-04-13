@@ -52,7 +52,7 @@ It exists to:
 
 ## ⚖️ Legal Attribution
 
-**XPECTRANET™** is a registered trademark of **Xpectra Data Technologies Ltd.**  
+**XPECTRANET®** is a registered trademark of **Xpectra Data Technologies Ltd.**  
 XPDT, XKO, and all symbolic rituals, roles, and structures are protected intellectual property.
 
 > Portions of this SDK and protocol logic are part of the **XpectraNet Protocol**.  
