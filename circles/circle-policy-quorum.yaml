@@ -1,0 +1,18 @@
+circle_id: xko-governance-circle
+
+# Validation requirements
+require_layer_progression: true
+allow_same_emotion: false
+required_validator_role: validator
+
+# Canonization rules
+allowed_canonizers: [validator]
+minimum_depth: 2
+require_divergence_score: 0.3
+
+# Quorum voting logic (new)
+quorum:
+  requiredValidators: 2               # Minimum affirm votes if using count method
+  voteMethod: stake-weighted          # Can be 'stake-weighted' or 'count'
+  requiredStakePercent: 0.6           # 60% XPDT stake needed to approve
+  validatorSplit: [0.5, 0.3, 0.2]     # Reward distribution among affirming validators
