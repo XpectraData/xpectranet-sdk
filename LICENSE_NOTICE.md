@@ -1,5 +1,5 @@
 
-This software is part of the XPECTRANET™ Protocol by Xpectra Data Technologies Ltd.
+This software is part of the XPECTRANET® Protocol by Xpectra Data Technologies Ltd.
 
 Use of symbolic memory logic, remix rituals, XPDT staking, and XKO cognitive layers
 is governed by the XPECTRANET LICENSE.
