@@ -1,23 +1,34 @@
 # circle-policy.yaml
+# XpectraNet Circle Validation Policy (alias-aware for 7-layer operational logic)
 
-circle_id: validator-circle-001
+minStake: 1.0
 
-# Require that each insight evolves upward in the layer structure
-require_layer_progression: true
+allowedTransitions:
+  # Aliased 7-layer transitions (from alias: → to alias:)
+  - from: L1  # Origin
+    to: L2    # Remix
+  - from: L2
+    to: L3    # Synthesis
+  - from: L3
+    to: L4    # Validation
+  - from: L4
+    to: L5    # Canon
+  - from: L5
+    to: L6    # Archive
 
-# Do not allow same emotional tag as parent during validation
-allow_same_emotion: false
+layerAliases:
+  L0: Perception
+  L1: Origin Insight
+  L2: Remix
+  L3: Synthesis
+  L4: Validation
+  L5: Canon
+  L6: Archive/Myth
 
-# Only agents with this role can validate insights
-required_validator_role: validator
-
-# Only these roles can initiate canonization
-allowed_canonizers:
-  - validator
-  - remixer
-
-# Minimum remix depth required for canonization (length of memory trail)
-minimum_depth: 2
-
-# Minimum symbolic divergence score required for canonization
-require_divergence_score: 0.3
+validators:
+  - role: "circle-member"
+    glyph: "ψ-Echo"
+    permissions:
+      - canValidate: true
+      - canCanonize: true
+      - canRemix: true
