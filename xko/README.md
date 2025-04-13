@@ -1,57 +1,51 @@
-# 🧠 xko/ — Xpectra Knowledge Ontology (Layers L0–L9)
+# 🧠 XKO Layer Mapping
 
-This folder defines the core symbolic structure of the XpectraNet Protocol — how insights evolve through cognitive layers of meaning.
-
----
-
-## 🔢 What Are XKO Layers?
-
-Each insight in XpectraNet exists in one of 10 cognitive layers, from raw perception (L0) to universal symbolic archetypes (L9).
-
-They help agents:
-- Track memory evolution
-- Assign meaning across contexts
-- Guide remix, validation, and canonization decisions
+This directory contains the **layer alias mapping** used throughout the XpectraNet SDK
+to align symbolic cognition (L0–L9) with the simplified operational model (L0–L6).
 
 ---
 
-## 📘 Files
+## 📘 `layer_alias_map.json`
 
-| File               | Description                                           |
-|--------------------|-------------------------------------------------------|
-| `layer_map.py`      | Python map of layers and roles                       |
-| `layer_map.jsonld`  | Semantic JSON-LD ontology for XKO layers             |
-
----
-
-## 🧬 Sample Layer
+A JSON file mapping symbolic memory layers (`L0` to `L9`) to simplified aliases (`L0` to `L6`):
 
 ```json
 {
-  "@id": "xko:L5",
-  "name": "Emotional Logic",
-  "description": "Memory weighted by emotional contradiction or resonance.",
-  "symbolicRole": "feel + guide",
-  "cognitiveBasis": "valence alignment / narrative tension"
+  "L0": {"alias": "L0", "name": "Perception"},
+  "L1": {"alias": "L1", "name": "Origin Insight"},
+  "L2": {"alias": "L2", "name": "Remix"},
+  "L3": {"alias": "L2", "name": "Remix"},
+  "L4": {"alias": "L3", "name": "Synthesis"},
+  "L5": {"alias": "L3", "name": "Synthesis"},
+  "L6": {"alias": "L4", "name": "Validation"},
+  "L7": {"alias": "L5", "name": "Canon"},
+  "L8": {"alias": "L6", "name": "Archive"},
+  "L9": {"alias": "L6", "name": "Archive/Myth"}
 }
 ```
 
 ---
 
-## 🧭 Use This For:
+## 🔄 Why Alias the Layers?
 
-- Memory graphs
-- Semantic UI overlays (color by layer)
-- Insight validation logic
-- Wikidata/LD interoperability
+To simplify real-world development while preserving symbolic richness:
+
+- 🔁 L3 (Divergence) and L4 (Synthesis) → merged into `Remix` and `Synthesis`
+- ✅ Canonical transitions (L1 → L2 → L3 → L4 → L5 → L6) supported in CirclePolicy
+- 🧭 Reduces cognitive friction for validators, agents, and developers
 
 ---
 
-## 🔗 Publish or Extend
+## 🧩 Used In:
 
-To serve your JSON-LD publicly:
+- `TrailManager` — to build remix trails using layer shifts
+- `ValidatorEngine` — to check allowed transitions
+- `CirclePolicy` — to enforce governance rules
+- Insight display UIs — to group phases into cognitive bands
 
-1. Host `layer_map.jsonld` at: `https://xpectranet.org/xko/layer_map.jsonld`
-2. Register namespace: `https://xpectranet.org/xko#`
-3. Add more vocab (e.g. `xko:Agent`, `xko:RemixIntent`, `xko:TrailNode`)
+---
+
+## 🛠 Tip for Contributors
+
+If you add or refactor layers in `XKO`, update this alias map to keep agents and governance aligned.
 
