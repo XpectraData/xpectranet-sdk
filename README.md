@@ -17,8 +17,8 @@ Supports remixable insights, trust-based validation, and protocol-aligned govern
 
 ## 📦 Modules
 
-| Layer            | Folder          | Purpose                                  |
-|------------------|------------------|------------------------------------------|
+| Layer             | Folder            | Purpose                                  |
+|-------------------|-------------------|------------------------------------------|
 | Agents            | `agents/`         | Mint, remix, and model symbolic cognition |
 | Remix Engine      | `remix/`          | Apply motivation and remix rules         |
 | Symbolic Memory   | `memory/`         | Store insights, build trails, persist to Ceramic |
@@ -59,15 +59,11 @@ ValidatorEngine.validate_insight(agent.to_dict(), remix, origin)
 
 ## 📚 Documentation
 
-| Guide              | Path                                      |
-|--------------------|-------------------------------------------|
-| Architecture       | [`docs/architecture.md`](docs/architecture.md) |
-| Usage Guide        | [`docs/usage.md`](docs/usage.md)               |
-| LangGraph Integration | [`docs/integration_langgraph.md`](docs/integration_langgraph.md) |
-| Lifecycle Phases   | [`docs/lifecycle.md`](docs/lifecycle.md)       |
-| Circle Governance  | [`docs/circle-governance.md`](docs/circle-governance.md) |
-| XKO Memory Layers  | [`docs/xko-layers.md`](docs/xko-layers.md)     |
-| Temporal Autonomy  | [`docs/spec_temporal_autonomy.md`](docs/spec_temporal_autonomy.md) |
+See the organized [documentation index](docs/README.md) for:
+
+- ✅ [Formal specs](docs/specs/xko-layers.md) on symbolic layers, governance, and memory
+- 🔄 [Usage guides](docs/guides/usage.md) for LangGraph integration and agent lifecycle
+- 🧱 [Architecture overview](docs/architecture.md)
 
 ---
 
@@ -85,15 +81,14 @@ This SDK is in early release. Contributions, extensions, and feedback are welcom
 
 > Symbolic cognition. Persistent memory. Protocol-aligned intelligence.
 
-
 ---
 
 ## 📜 License & Intellectual Property
 
 This SDK is released under the [XPECTRANET™ Protocol License](./LICENSE.md).  
 
-- **XPECTRANET™** is a registered trademark of **Xpectra Data Technologies Ltd.**  
-- XPDT™, XKO™, and symbolic logic (e.g. remix trails, insight scoring, Circle voting) are protected intellectual property.  
+- **XPECTRANET®** is a registered trademark of **Xpectra Data Technologies Ltd.**  
+- XPDT, XKO, and symbolic logic (e.g. remix trails, insight scoring, Circle voting) are protected intellectual property.  
 - Use in commercial or derivative protocols requires explicit permission.  
 
 > Portions of this codebase are part of a symbolic infrastructure to preserve, evolve, and govern shared cognition.  
