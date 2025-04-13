@@ -1,0 +1,23 @@
+# circle-policy.yaml
+
+circle_id: validator-circle-001
+
+# Require that each insight evolves upward in the layer structure
+require_layer_progression: true
+
+# Do not allow same emotional tag as parent during validation
+allow_same_emotion: false
+
+# Only agents with this role can validate insights
+required_validator_role: validator
+
+# Only these roles can initiate canonization
+allowed_canonizers:
+  - validator
+  - remixer
+
+# Minimum remix depth required for canonization (length of memory trail)
+minimum_depth: 2
+
+# Minimum symbolic divergence score required for canonization
+require_divergence_score: 0.3
