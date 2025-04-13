@@ -60,13 +60,14 @@ ValidatorEngine.validate_insight(agent.to_dict(), remix, origin)
 ## 📚 Documentation
 
 | Guide              | Path                                      |
-|-------------------|-------------------------------------------|
+|--------------------|-------------------------------------------|
 | Architecture       | [`docs/architecture.md`](docs/architecture.md) |
 | Usage Guide        | [`docs/usage.md`](docs/usage.md)               |
 | LangGraph Integration | [`docs/integration_langgraph.md`](docs/integration_langgraph.md) |
 | Lifecycle Phases   | [`docs/lifecycle.md`](docs/lifecycle.md)       |
 | Circle Governance  | [`docs/circle-governance.md`](docs/circle-governance.md) |
 | XKO Memory Layers  | [`docs/xko-layers.md`](docs/xko-layers.md)     |
+| Temporal Autonomy  | [`docs/spec_temporal_autonomy.md`](docs/spec_temporal_autonomy.md) |
 
 ---
 
