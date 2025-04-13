@@ -14,9 +14,9 @@ These documents define the symbolic logic and memory architecture behind Xpectra
 
 | Spec                         | Description                                                  |
 |-----------------------------|--------------------------------------------------------------|
-| [`xko-layers.md`](specs/spec-xko-layers.md)              | Full and simplified symbolic memory layer model (L0–L9 → L0–L6) |
-| [`circle-governance.md`](specs/spec-circle-governance.md)| Validator and Circle policy logic with XPDT and roles          |
-| [`spec_temporal_autonomy.md`](specs/spec-temporal-autonomy.md) | Ritual-based memory scheduling and symbolic reentry           |
+| [`spec-xko-layers.md`](specs/spec-xko-layers.md)              | Full and simplified symbolic memory layer model (L0–L9 → L0–L6) |
+| [`spec-circle-governance.md`](specs/spec-circle-governance.md)| Validator and Circle policy logic with XPDT and roles          |
+| [`spec-temporal-autonomy.md`](specs/spec-temporal-autonomy.md) | Ritual-based memory scheduling and symbolic reentry           |
 
 ---
 
