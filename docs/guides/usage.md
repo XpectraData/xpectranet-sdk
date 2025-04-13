@@ -1,93 +1,118 @@
-# 🚀 XpectraNet SDK — Usage Guide
+# 🚀 Quick Usage Guide — XpectraNet SDK
 
-This guide walks you through how to use the XpectraNet SDK to build agents, remix symbolic insights, validate memory, and persist knowledge trails using Ceramic or ComposeDB.
+This guide walks through the basic building blocks of symbolic cognition using the XpectraNet SDK.
+
+You’ll learn how to:
+
+- 💡 Mint a new insight
+- 🔁 Remix and transform memory
+- ✅ Validate transitions using Circle policy
+- 🛠 Extend memory trails with symbolic fingerprinting
 
 ---
 
-## 🔧 Install Dependencies
+## 🔧 1. Setup
 
+Install requirements:
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## 🤖 Create an Agent
-
+Import key modules:
 ```python
 from agents.symbolic_agent import SymbolicAgent
-
-agent = SymbolicAgent(
-    glyph="ψ-Echo",
-    role="remixer",
-    remixMotivation="diverge",
-    goal="reveal contradiction"
-)
+from remix.remix_engine import RemixEngine
+from validation.validator import ValidatorEngine
+from circles.governance import CirclePolicy
+from memory.trail_manager import TrailManager
 ```
 
 ---
 
-## 🧠 Mint and Remix Insights
+## 🧠 2. Mint a Symbolic Insight
 
 ```python
-origin = agent.mint_insight("The system is unstable.", layer="L1")
+agent = SymbolicAgent(glyph="ψ-Echo", remixMotivation="question")
+origin = agent.mint_insight("What if silence was never empty?")
+```
 
-from remix.remix_engine import RemixEngine
+Each insight has:
+- `content`, `memoryPhase`, `emotion`, `trail`, `tags`, etc.
+- Layer L1 (Origin Insight) by default
+
+---
+
+## 🔁 3. Remix Insight with Motivation
+
+```python
 remix = RemixEngine.remix(agent, origin)
 ```
 
+Creates a symbolic transformation:
+- Applies remix rules based on emotion/motivation
+- Moves insight from L1 → L2 (or beyond)
+
 ---
 
-## ✅ Validate with Circle Policy
+## ✅ 4. Validate Insight Using Circle Policy
 
 ```python
-from validation.validator import ValidatorEngine
-
-valid = ValidatorEngine.validate_insight(agent.to_dict(), remix, origin)
+policy = CirclePolicy.load("circles/circle-policy.yaml")
+ValidatorEngine.validate_insight(origin, remix, agent.to_dict(), policy)
 ```
 
-Use:
-- `validate_insight()` → check governance
-- `validate_canonization()` → if ready for L7
-- `validate_by_quorum()` → multi-agent voting
+Checks:
+- Memory layer transition (L1 → L2)
+- Agent permissions (via `role` and `glyph`)
+- Circle-defined transitions
 
 ---
 
-## 🗳 Quorum Voting
+## 🧬 5. Build and Extend the Trail
 
 ```python
-votes = [{"affirm": True, "stake": 1.0}, {"affirm": False, "stake": 0.5}]
-ValidatorEngine.validate_by_quorum(votes, policy_path="circles/circle-policy.yaml")
+trail = TrailManager.build_trail(origin, remix["id"])
 ```
 
----
+Appends remix to insight lineage.
 
-## 💾 Store in Memory or Ceramic
-
+You can also summarize:
 ```python
-from memory.memory_client import MemoryClient
-MemoryClient.store_insight(remix)
-
-from memory.compose_memory import ComposeMemory
-ComposeMemory.store(remix)
-```
-
----
-
-## 🧬 Trails
-
-```python
-from memory.trail import TrailManager
-trail = TrailManager.append(origin["trail"], origin["id"])
+summary = TrailManager.summarize_trail(trail)
+print(summary)  # insight:L1 → insight:L2 → insight:L3 ...
 ```
 
 ---
 
-## 📦 Full Loop
+## 🧩 Agent Config (Optional)
 
-See:
-- `examples/agent_loop.py`
-- `docs/lifecycle.md`
-- `docs/circle-governance.md`
-- `docs/integration_langgraph.md`
+Agents can load symbolic config via `agent-config.xko.json`:
+```json
+{
+  "glyph": "ψ-Echo",
+  "remixRules": [
+    {
+      "whenEmotionIs": "grief",
+      "thenRemixWith": "curiosity",
+      "layerShift": "L0 → L1"
+    }
+  ],
+  "defaultStake": 1.0
+}
+```
 
+---
+
+## 🔗 Next Steps
+
+- 🛠 Run full loops with LangGraph orchestration  
+- 🧠 Explore emotional fingerprints and validation workflows  
+- 📚 Dive deeper into [Symbolic Lifecycle](lifecycle.md)
+
+---
+
+## Resources
+
+- [Layer Model](../specs/spec-xko-layers.md)  
+- [Circle Governance](../specs/spec-circle-governance.md)  
+- [ComposeDB Schema](../../compose/schema.graphql)
