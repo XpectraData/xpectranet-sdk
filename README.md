@@ -61,7 +61,7 @@ ValidatorEngine.validate_insight(agent.to_dict(), remix, origin)
 
 See the organized [documentation index](docs/README.md) for:
 
-- ✅ [Formal specs](docs/specs/xko-layers.md) on symbolic layers, governance, and memory
+- ✅ [Formal specs](docs/specs/spec-xko-layers.md) on symbolic layers, governance, and memory
 - 🔄 [Usage guides](docs/guides/usage.md) for LangGraph integration and agent lifecycle
 - 🧱 [Architecture overview](docs/architecture.md)
 
