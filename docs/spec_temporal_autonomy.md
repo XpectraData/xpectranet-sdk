@@ -1,105 +1,90 @@
-# 🌀 Temporal Autonomy in XpectraNet
-## Ritual-Based Scheduling and Insight Recall
+# 🔁 Temporal Autonomy in XpectraNet
 
-This symbolic spec defines how time-aware agents in XpectraNet go beyond scheduling — into **memory evolution through ritual triggers**.
+## Overview
 
----
+This specification defines how agents in the XpectraNet Protocol can schedule, recall, and evolve memory over time — using symbolic rituals instead of basic reminders.
 
-## 1. What Is Temporal Autonomy?
-
-**Temporal autonomy** is the ability for an agent to act **in the future**, not merely due to time passing, but due to a **symbolic intention** set earlier.
-
-Unlike reminders or cron jobs, temporal autonomy in XpectraNet is:
-- Emotion-aware
-- Insight-driven
-- Ritual-triggered
+Where other AI systems passively store preferences, XpectraNet enables **intent-aware**, **symbolic**, and **programmable time-linked cognition**.
 
 ---
 
-## 2. GPT-4o Temporal Memory — A Useful Baseline
+## 🧠 What Is Temporal Autonomy?
 
-| Feature                | GPT-4o ChatGPT               |
-|------------------------|------------------------------|
-| Stores preferences     | ✅                            |
-| Parses “next week”     | ✅                            |
-| Initiates follow-ups   | ✅ (via backend scheduling)   |
-| Understands meaning    | ❌                            |
-| Evolves memory         | ❌                            |
-| Symbolic time          | ❌                            |
+**Temporal autonomy** is the ability for an agent to:
 
----
+- Mint or revisit an insight **at a future symbolic point**
+- Decide **when and how** to engage memory based on emotion, layer, or ritual
+- Initiate acts **without external prompts** — triggered by *symbolic state* or *scheduled insight logic*
 
-## 3. XpectraNet Temporal Recall — Symbolically Activated
-
-| Capability                         | ChatGPT | XpectraNet |
-|------------------------------------|---------|------------|
-| Time-based response                | ✅      | ✅          |
-| Emotion-based reactivation         | ❌      | ✅          |
-| Layer-aware return (e.g. L3→L6)    | ❌      | ✅          |
-| Memory remix trail                 | ❌      | ✅          |
-| User-defined ritual triggers       | ❌      | ✅          |
-| Group memory recall (Circles)      | ❌      | ✅          |
+This enables a form of **cognitive time travel**, where agents evolve meaning across memory trails with autonomy.
 
 ---
 
-## 4. Symbolic Recall Design: `ritualRecall`
+## 🔁 Ritual-Based Scheduling
+
+Unlike simple timers or reminders, XpectraNet uses **symbolic triggers**:
+
+| Ritual Trigger         | Example Condition                          | Result                                  |
+|------------------------|---------------------------------------------|------------------------------------------|
+| `RecallAfter`          | `{"layer": "L3", "emotion": "grief"}`       | Return when this emotion reoccurs        |
+| `ReturnAtPhase`        | `L5`                                        | Return when insight reaches resonance    |
+| `AfterQuorum`          | Wait for validation to canonize             | Trigger follow-up remix or review        |
+| `LayerReentry`         | Revisit trail node when revisited by Circle | Enable perspective-based remix           |
+
+---
+
+## 📘 Example: Agent Ritual Recall Config
 
 ```json
 {
-  "ritualRecall": {
-    "triggerAfter": "3 days",
-    "triggerByEmotion": ["awe", "grief"],
-    "ritualIntent": "revisit for canonization"
-  }
+  "glyph": "ψ-Echo",
+  "ritualRecall": [
+    {
+      "when": {"emotion": "grief", "layer": "L3"},
+      "then": "returnWith": "curiosity"
+    },
+    {
+      "when": {"layer": "L5"},
+      "then": "reframeWith": "prophetic"
+    }
+  ]
 }
 ```
 
-This can be stored with the insight itself, or within agent config or Circle policy.
+These are symbolic **event → response** mappings encoded in the agent config.
 
 ---
 
-## 5. Agent Logic Hooks
+## 🧩 Implementation Scope
 
-```python
-agent.check_ritual_recall() → looks for scheduled insight returns
-
-agent.remix_on_return(insight) → re-mint or validate insight
-
-circle.validate_upon_return() → collective re-judgment after time/emotion pass
-```
-
----
-
-## 6. Symbolic Time vs Linear Time
-
-| Linear Time                | Symbolic Time                      |
-|---------------------------|------------------------------------|
-| “Remind me Friday”        | “Return when grief becomes awe”    |
-| Cron or scheduler         | Emotion-state + layer shift        |
-| Wait for delay            | Wait for divergence to reduce      |
+- ✅ Can be attached to any `xko:Insight` via metadata
+- ✅ Supports agent-side config, replay, or scheduling engine
+- 🧠 Works in concert with:
+  - `memoryPhase`
+  - `remixMotivation`
+  - `CirclePolicy`
+  - `TrailManager`
 
 ---
 
-## 7. Use Case Example
+## 🛠 What This Enables
 
-> A validator sees a remix insight tagged as “grief.”  
-> They trigger a `ritualRecall` to return in 3 days *only if it matures into awe*.  
-> If triggered, they are re-prompted to **canonize** it in Layer L7.
-
----
-
-## 8. Next Steps for SDK
-
-- [ ] Add `ritualRecall` support to insight model
-- [ ] Schedule `check_ritual_recall()` in agent loop
-- [ ] Emotion-state transitions to trigger return
-- [ ] ValidatorAgent → `validate_on_return()`
+- 📆 Scheduled insight return based on *meaning*, not time
+- 🔁 Agent reentry into memory trails with symbolic fingerprint
+- 🧠 Cognitive framing of insight timing (“return when it matters again”)
+- 🎭 Emotional trajectory design for autonomous remix behavior
 
 ---
 
-## 9. Summary
+## 🔮 Future Extension Ideas
 
-ChatGPT taught us AI can remember.
+- Layer-phase reentry logic (e.g. “jump back to L3 if L7 fails canonization”)
+- Stackable ritual queues for composite memory acts
+- XPDT staking on future memory returns
 
-**XpectraNet teaches it when to return.**
+---
 
+For practical use, see:
+- `ritualRecall.json` examples
+- `TrailManager` + `AgentConfig` implementation
+- `compose/schema.graphql` for `memoryPhase`, `emotion`, `remixMotivation`
