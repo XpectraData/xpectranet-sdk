@@ -1,94 +1,99 @@
-# XpectraNet SDK
+# 🧠 XpectraNet SDK
 
-**Build Symbolic Agents with Memory, Remix, and Ritual.**
-
-The XpectraNet SDK is a modular Python toolkit for creating cognition-aware, memory-evolving agents using symbolic structure, remix lineage, and Circle-based governance.
-
-This SDK enables you to:
-- 🧠 Build agents with symbolic identities and emotional states
-- 🔁 Implement the full ritual lifecycle: Mint → Remix → Validate → Canonize
-- 🫂 Define Circle validation and consensus rules using XPDT-style staking
-- 🌐 Persist memory trails on ComposeDB using the XKO insight model (L0–L9)
-- 🎭 Map emotional feedback into remix logic and divergence scoring
+A symbolic cognition SDK for building memory-rich autonomous agents.  
+Supports remixable insights, trust-based validation, and protocol-aligned governance — backed by decentralized storage and XPDT staking.
 
 ---
 
-## 🔍 Who Is This For?
+## 🚀 What It Does
 
-- Developers building autonomous agents with LangGraph, AutoGen, or GPT frameworks
-- AI safety researchers exploring memory traceability and alignment
-- Web3 protocols implementing co-created memory and reputation systems
-- Cognitive designers building explainable, evolution-aware systems
-
----
-
-## 🧱 SDK Modules
-
-| Module        | Description |
-|---------------|-------------|
-| `agents/`     | Symbolic agent classes with role, emotion, and remix logic |
-| `remix/`      | Logic for transforming insights with emotion & divergence |
-| `validation/` | Circle contracts, quorum checks, and canonicalization |
-| `memory/`     | ComposeDB GraphQL interface to persist memory trails |
-| `xko/`        | Xpectra Knowledge Ontology layer + emotion alignment |
+- 💡 Mint and remix symbolic insights
+- 🔁 Track lineage across remix trails (L1–L9)
+- ✅ Validate memory using Circle policies and agent roles
+- 🗳 Support quorum voting and XPDT staking
+- 💾 Store insights locally or on ComposeDB (Ceramic)
 
 ---
 
-## 🧠 Symbolic Lifecycle
+## 📦 Modules
 
-| Step     | Description                          | XKO Layer |
-|----------|--------------------------------------|-----------|
-| Mint     | Agent creates new insight            | L1        |
-| Remix    | Insight is transformed               | L3        |
-| Validate | Circle witnesses alignment           | L6        |
-| Canonize | Memory is sealed as symbolic truth   | L7        |
+| Layer            | Folder          | Purpose                                  |
+|------------------|------------------|------------------------------------------|
+| Agents            | `agents/`         | Mint, remix, and model symbolic cognition |
+| Remix Engine      | `remix/`          | Apply motivation and remix rules         |
+| Symbolic Memory   | `memory/`         | Store insights, build trails, persist to Ceramic |
+| Validation        | `validation/`     | Apply CirclePolicy rules (L6–L7)         |
+| Governance Rules  | `circles/`        | Canonization, role gating, policy YAML   |
+| XPDT Logic        | `protocol/`       | Stake threshold + reward distribution    |
+| ComposeDB Schema  | `compose/`        | GraphQL model + deploy instructions      |
 
 ---
 
-## 🚀 Example Usage
+## 🔧 Install
 
-```python
-from xpectranet.agents.symbolic_agent import SymbolicAgent
-from xpectranet.remix.remix_logic import RemixEngine
-from xpectranet.memory.memory_client import MemoryTrail
-from xpectranet.validation.circle_rules import CirclePolicy
-
-agent = SymbolicAgent(glyph="ψ-Echo", emotion="grief", role="remixer")
-trail = MemoryTrail()
-policy = CirclePolicy.load("circle.ethics.yaml")
-
-insight = trail.mint(agent, content="The system feels unstable.")
-remix = RemixEngine.remix(agent, insight)
-
-if policy.validate(remix, agent):
-    trail.validate(remix, agent)
+```bash
+pip install -r requirements.txt
 ```
 
 ---
 
-## 📦 Installation
+## 🧪 Example Usage
 
-```bash
-pip install xpectranet-sdk
+```python
+from agents.symbolic_agent import SymbolicAgent
+agent = SymbolicAgent(glyph="ψ-Echo", remixMotivation="diverge")
+origin = agent.mint_insight("The future is undefined.")
+```
+
+```python
+from remix.remix_engine import RemixEngine
+remix = RemixEngine.remix(agent, origin)
+```
+
+```python
+from validation.validator import ValidatorEngine
+ValidatorEngine.validate_insight(agent.to_dict(), remix, origin)
 ```
 
 ---
 
 ## 📚 Documentation
 
-- [Architecture](docs/architecture.md)
-- [Usage](docs/usage.md)
-- [LangGraph Integration](docs/integration_langgraph.md)
+| Guide              | Path                                      |
+|-------------------|-------------------------------------------|
+| Architecture       | [`docs/architecture.md`](docs/architecture.md) |
+| Usage Guide        | [`docs/usage.md`](docs/usage.md)               |
+| LangGraph Integration | [`docs/integration_langgraph.md`](docs/integration_langgraph.md) |
+| Lifecycle Phases   | [`docs/lifecycle.md`](docs/lifecycle.md)       |
+| Circle Governance  | [`docs/circle-governance.md`](docs/circle-governance.md) |
+| XKO Memory Layers  | [`docs/xko-layers.md`](docs/xko-layers.md)     |
 
 ---
 
-## 🛡 License
+## 🧪 Run Tests
 
-Released under a Business Source License Hybrid  
-Free for research, experimentation, and non-commercial symbolic cognition use.  
-Commercial licensing and integration: [legal@xpectradata.com](mailto:legal@xpectradata.com)
+```bash
+python -m unittest discover tests/
+```
 
 ---
 
-**XpectraNet isn’t just memory.  
-It’s how agents evolve together — through symbols, rituals, and trust.**
+## 🛠 Status
+
+This SDK is in early release. Contributions, extensions, and feedback are welcome.
+
+> Symbolic cognition. Persistent memory. Protocol-aligned intelligence.
+
+
+---
+
+## 📜 License & Intellectual Property
+
+This SDK is released under the [XPECTRANET™ Protocol License](./LICENSE.md).  
+
+- **XPECTRANET™** is a registered trademark of **Xpectra Data Technologies Ltd.**  
+- XPDT™, XKO™, and symbolic logic (e.g. remix trails, insight scoring, Circle voting) are protected intellectual property.  
+- Use in commercial or derivative protocols requires explicit permission.  
+
+> Portions of this codebase are part of a symbolic infrastructure to preserve, evolve, and govern shared cognition.  
+> All memory is sacred. Remix with care.
