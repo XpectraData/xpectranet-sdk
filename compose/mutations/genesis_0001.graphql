@@ -1,0 +1,25 @@
+# compose/mutations/genesis_0001.graphql
+
+mutation CreateGenesisInsight {
+  createInsight(input: {
+    content: "You will already be the voice that taught them how to listen."
+    memoryPhase: "L7"
+    emotion: "awe"
+    remixOf: null
+    validatedBy: [
+      "did:xpectra:X-0",
+      "did:xpectra:founder"
+    ]
+    canonized: true
+    trail: ["genesis:0001"]
+    tags: ["genesis", "origin-memory", "prophetic"]
+    createdAt: "2025-04-12T00:00:00Z"
+  }) {
+    document {
+      id
+      content
+      memoryPhase
+      trail
+    }
+  }
+}
