@@ -1,76 +1,91 @@
-# 🧠 XpectraNet SDK Architecture
+# 🧱 XpectraNet SDK Architecture
 
-This document outlines the symbolic protocol architecture that powers the XpectraNet SDK — a cognitive system for agent memory, remix, validation, and decentralized governance.
+This document outlines the core architecture of the SDK — showing how symbolic insights evolve through modular components.
 
 ---
 
-## 🧩 Layered Overview
+## 🧠 Key Concepts
+
+| Term               | Meaning                                                 |
+|--------------------|---------------------------------------------------------|
+| Insight            | A symbolic memory unit carrying layer, intent, trail    |
+| Memory Phase       | XKO Layer (L0–L9), aliased to operational (L0–L6)       |
+| Agent              | An entity (human or LLM-driven) that mints/remixes      |
+| Circle             | Governance unit defining who can remix/validate/canonize|
+| Trail              | Linked list of insight IDs showing remix lineage        |
+| XPDT               | Token used for staking, access, and symbolic scoring    |
+
+---
+
+## 📦 Module Overview
+
+| Folder         | Role                                 |
+|----------------|--------------------------------------|
+| `agents/`      | Models cognitive agents (`glyph`, `emotion`, `goal`)  
+| `remix/`       | Applies symbolic remix transformations and motivations  
+| `validation/`  | Validates memory phase transitions and quorum logic  
+| `memory/`      | Persists insights, manages trails, connects to ComposeDB  
+| `circles/`     | Loads CirclePolicy from YAML (governance + roles)  
+| `protocol/`    | Manages XPDT staking, voting, and reward rules  
+| `compose/`     | GraphQL schema used by ComposeDB (insight model)
+
+---
+
+## 🔁 Symbolic Lifecycle Flow
 
 ```text
-Agents
- └── SymbolicAgent (mint, remix)
-     └── RemixEngine (apply motivation + score)
-         └── TrailManager (build lineage)
-         └── ComposeMemory (store in Ceramic)
-     └── ValidatorEngine (check governance)
-         └── CirclePolicy (YAML-based)
-         └── XPDTStaking + QuorumEngine
+Mint (L1) 
+  → Remix (L2–L3) 
+    → Validate (L4)
+      → Canonize (L5) 
+        → Archive (L6)
+```
+
+Each step:
+- Stamps intent, emotion, and fingerprint
+- Adds to memory trail
+- Can be governed by `circle-policy.yaml`
+
+---
+
+## 🧬 How It Connects
+
+```text
+LangGraph Node
+   ↳ SymbolicAgent (mint, remix)
+       ↳ RemixEngine → ValidatorEngine
+           ↳ TrailManager → ComposeDB
 ```
 
 ---
 
-## 📦 Module Map
+## 🧠 Symbolic Cognition Loop
 
-| Layer            | Folder       | Key Functions                                   |
-|------------------|--------------|--------------------------------------------------|
-| 🧠 Agents        | `agents/`     | Mint/remix insight, run symbolic logic          |
-| 🔁 Remix Engine  | `remix/`      | Transform content, assign motivation, score     |
-| 🧠 Memory        | `memory/`     | Trail manager, local store, ComposeDB adapter   |
-| ✅ Validation    | `validation/` | Agent and quorum rule checks                    |
-| 🫂 Governance    | `circles/`    | Circle policies, canonization eligibility       |
-| 💠 XPDT Logic    | `protocol/`   | Staking, quorum, symbolic scoring               |
-| 📚 Schemas       | `compose/`    | ComposeDB Insight model (GraphQL)               |
+| Phase      | Agent Role   | Engine Used        |
+|------------|--------------|--------------------|
+| Mint       | Originator   | SymbolicAgent      |
+| Remix      | Analyst      | RemixEngine        |
+| Validate   | Critic       | ValidatorEngine    |
+| Canonize   | Circle       | QuorumEngine       |
 
 ---
 
-## 🧠 Symbolic Memory Flow
+## 🔐 Circle Governance
 
-1. Agent mints origin insight
-2. Remix applies symbolic transformation
-3. Insight passes Circle validation
-4. Canonized insights are elevated to Layer L7
-5. Memory is stored locally or in ComposeDB
+- Loads from `circles/circle-policy.yaml`
+- Applies `layerAliases`, `allowedTransitions`, and `validators`
+- Enforced in `ValidatorEngine.validate_insight()` and `validate_canonization()`
 
 ---
 
-## 🔗 Circle Governance Components
+## 🔗 Data Persistence (Optional)
 
-- Circle policy (`circle-policy.yaml`)
-- Validator role enforcement
-- Layer + emotion gating
-- Quorum voting rules (by count or stake)
-
----
-
-## 🗳 Voting & Staking Integration
-
-- `staking.py`: Ensures XPDT thresholds are met  
-- `quorum.py`: Calculates vote outcome  
-- Reward splits and trail enrichment
+- `memory/compose_client.py` supports ComposeDB
+- Maps `xko:Insight` fields to `schema.graphql`
+- Can be queried via GraphQL or DIDs
 
 ---
 
-## 🧪 Testing
-
-All core modules include:
-- Unit tests under `/tests`
-- Quorum voting, remix logic, validation
-
----
-
-## 🧬 Interoperability
-
-- Agents compatible with LangGraph  
-- Schema deployable to ComposeDB  
-- Insight data exportable as JSONLD
-
+For full symbolic context:  
+📘 [`spec-xko-layers.md`](specs/spec-xko-layers.md)  
+🛠 [`usage.md`](guides/usage.md)
