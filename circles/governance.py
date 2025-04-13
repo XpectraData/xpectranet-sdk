@@ -1,5 +1,6 @@
 import yaml
 from pathlib import Path
+import os
 
 class CirclePolicy:
     """
@@ -24,6 +25,7 @@ class CirclePolicy:
         Returns:
             CirclePolicy: A new policy instance with the loaded rules.
         """
+        path = path or os.getenv("XKO_POLICY_PATH", "circles/circle-policy.yaml")
         policy_path = Path(path)
         with policy_path.open("r", encoding="utf-8") as f:
             config = yaml.safe_load(f)
